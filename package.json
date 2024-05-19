@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "vite"
+    "start": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "browserslist": "^4.23.0",
@@ -27,7 +29,7 @@
     "vite": "^5.2.0",
     "gh-pages": "^6.1.1"
   },
-  "homepage": "https://tu-usuario.github.io/ecommerce-coffeeshop"
+  "homepage": "https://tu-usuario.github.io/react-ecommerce-coffeeshop"
 }
 
 
