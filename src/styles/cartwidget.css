@@ -1,0 +1,16 @@
+.cart-widget {
+    position: relative;
+    cursor: pointer;
+    margin-right: 50px;
+  }
+  
+
+  .bx-cart {
+    font-size: 25px; 
+  }
+  .cart-count {
+    background-color: #a11505; 
+    color: white; 
+    border-radius: 50%;
+    padding: 0.15rem 0.5rem;
+  }

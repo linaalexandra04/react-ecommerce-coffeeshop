@@ -1,0 +1,17 @@
+body {
+    font-family: 'Poppins', sans-serif; 
+}
+
+.navbar h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 501; 
+}
+
+.navbar-item a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; 
+}
+
+.item-list-container h2 {
+    font-family: 'Poppins', sans-serif;
+}
