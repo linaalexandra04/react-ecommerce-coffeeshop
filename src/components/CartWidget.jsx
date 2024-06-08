@@ -5,7 +5,7 @@ const CartWidget = () => {
   return (
     <div className="cart-widget">
       <i class='bx bx-cart'></i>
-      <span className="cart-count">3</span>
+      <span className="cart-count">0</span>
     </div>
   );
 };

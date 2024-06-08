@@ -1,17 +1,24 @@
-.item-list-container {
+
+
+.product-list {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
-    height: calc(100vh - 100px);  
-    width: auto;
-    margin-top: 10px; 
-  }
-  
-  .item-list-container h2 {
-    font-size: 2.5rem; 
-    color: #333; 
-    margin: 0; 
-    padding: 20rem; 
+}
+
+.product-item {
+    border: 1px solid #f3ebeb;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
     text-align: center;
-    justify-content: center;
-    }
+}
+
+.product-item h3 {
+    margin: 0 0 10px 0;
+}
+
+.product-item p {
+    margin: 0;
+}

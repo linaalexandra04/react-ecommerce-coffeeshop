@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProducts, getProductsByCategory } from '../utils/async-mocks';
-import '../styles/ItemListContainer.css';
+
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -18,18 +18,16 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div>
-      <h2>{greeting}</h2>
-      <div>
+      <h1>{greeting}</h1>
+      <ul>
         {products.map((product) => (
-          <div key={product.id}>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-          </div>
+          <li key={product.id}>{product.name}</li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
 
 export default ItemListContainer;
+
 
