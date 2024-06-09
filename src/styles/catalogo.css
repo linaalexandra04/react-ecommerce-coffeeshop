@@ -22,6 +22,8 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .gallery-item {
@@ -33,4 +35,5 @@
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 20px;
 }
