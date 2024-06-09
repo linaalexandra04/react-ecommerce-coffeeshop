@@ -1,0 +1,36 @@
+.catalogo-title {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 100px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .catalogo-description {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+  
+.gallery {
+    max-width: 90rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 32px);
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
