@@ -1,11 +1,13 @@
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    padding-top: 5rem;
   }
   
   .product-card {
-    border: 1px solid #ccc;
+    border: 1px solid #fad46c;
+    border-radius: 30px;
     padding: 16px;
     margin: 16px;
     text-align: center;
@@ -23,13 +25,15 @@
   }
   
   button {
-    background-color: #ebb645;
-    color: rgb(36, 35, 35);
-    padding: 10px 20px;
+    background-color: #e4bb62;
+    color: #302f2f;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
   }
   
   button:hover {
-    background-color: #f3e192;
+    background-color: #c99c3a;
   }

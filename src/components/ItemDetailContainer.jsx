@@ -1,33 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProducts, getProductsByCategory } from '../utils/async-mocks';
+import { getProductById } from '../utils/async-mocks';
+import ItemDetail from './ItemDetail';
 
-
-
-const ItemListContainer = ({ greeting }) => {
-  const [products, setProducts] = useState([]);
-  const { categoryId } = useParams();
+const ItemDetailContainer = () => {
+  const { itemId } = useParams();
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    if (categoryId) {
-      getProductsByCategory(categoryId).then((data) => setProducts(data));
-    } else {
-      getProducts().then((data) => setProducts(data));
-    }
-  }, [categoryId]);
+    getProductById(itemId).then(setProduct);
+  }, [itemId]);
 
   return (
     <div>
-      <h1>{greeting}</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </ul>
+      {product ? <ItemDetail product={product} /> : <p>Cargando...</p>}
     </div>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;
 
 

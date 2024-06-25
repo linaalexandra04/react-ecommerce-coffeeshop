@@ -63,16 +63,3 @@ box-shadow: 0px 7px 17px -6px rgba(0,0,0,0.75);
     height: auto;
     border-radius: 4px;
   }
-  .product-button {
-    background-color: #e4bb62;
-    color: #302f2f;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-  
-  .product-button:hover {
-    background-color: #c99c3a;
-  }
