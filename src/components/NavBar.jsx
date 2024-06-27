@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import '../styles/navbar.css';
 
-function NavBar() {
+const NavBar = ({ cartItemCount }) => {
   return (
     <nav>
       <ul>
         <li><Link to="/">Inicio</Link></li>
         <li><Link to="/catalogo">Catálogo</Link></li>
-        <CartWidget />
+        <CartWidget cartItemCount={cartItemCount} />
       </ul>
     </nav>
   );

@@ -1,39 +1,27 @@
 const products = [
-    {
-    id: 1,
-    category: 'catalogo',
-    name: 'Café Espresso',
-    image: '/img/2.png',
-    },
-    {
-    id: 2,
-    category: 'catalogo',
-    name: 'Café Americano',
-    image:'/img/3.png',
-    },
-    {
-    id: 3,
-    category: 'productos',
-    name: 'Café Latte',
-    image:'/img/4.png',
-    },
-    {
-    id: 4,
-    category: 'productos',
-    name: 'Café Mocha',
-    image:'/img/5.png',
-    },
-];
+    { id: 1, name: 'Café Fino', category: 'Premium', price: 5000, image: '/img/2.png', description: 'Café fino' },
+    { id: 2, name: 'Café Medio', category: 'Medio', price: 6000, image: '/img/3.png', description: 'Café medio fuerte' },
+    { id: 3, name: 'Café Grueso', category: 'Natural', price: 7000, image: '/img/4.png', description: 'Café Fuerte' },
 
-export const getProducts = () => {
-    return Promise.resolve(products);
-};
-
-export const getProductsByCategory = (categoryId) => {
-    return Promise.resolve(products.filter((product) => product.category === categoryId));
-};
-
-export const getProductById = (id) => {
-    return Promise.resolve(products.find((product) => product.id === id));
-};
-
+  ];
+  
+  export const getProductsByCategory = (categoryId) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (categoryId) {
+          resolve(products.filter(product => product.category === categoryId));
+        } else {
+          resolve(products);
+        }
+      }, 500);
+    });
+  };
+  
+  export const getProductById = (id) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(products.find(product => product.id === parseInt(id)));
+      }, 500);
+    });
+  };
+  

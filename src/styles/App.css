@@ -1,18 +1,38 @@
 body {
-    font-family: 'Poppins', sans-serif; 
-}
-
-.navbar h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 501; 
-}
-
-.navbar-item a {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400; 
-}
-
-.item-list-container h2 {
-    font-family: 'Poppins', sans-serif;
-}
-
+    font-family: poppins, sans-serif;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .item-detail {
+    border: 1px solid #ccc;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .item-quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .brief {
+    border: 1px solid #ccc;
+    padding: 16px;
+  }
+  
+  .brief ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
