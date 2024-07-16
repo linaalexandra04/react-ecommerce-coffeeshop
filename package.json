@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "browserslist": "^4.23.0",
+    "firebase": "^10.12.3",
     "node-releases": "^2.0.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

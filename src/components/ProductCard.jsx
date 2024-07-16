@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <h3>{product.name}</h3>
-      <img src={product.image} alt={product.name} className="product-image" />
+      <img src={product.image} alt={product.name} className="gs://coffee-shop-91c91.appspot.com/2.png" />
       <Link to={`/item/${product.id}`}>
         <button>Ver Producto</button>
       </Link>
