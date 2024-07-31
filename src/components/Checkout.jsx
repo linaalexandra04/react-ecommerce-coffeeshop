@@ -1,12 +1,28 @@
 import React from 'react';
+import { useCart } from '../CartContext';
 
 const Checkout = () => {
-return (
+  const { getCartItems } = useCart();
+  const cartItems = getCartItems();
+
+  const handleCheckout = () => {
+    
+    alert('Checkout complete!');
+  };
+
+  return (
     <div>
-    <h2>Checkout</h2>
-    <p>Gracias por su compra!</p>
+      <h1>Checkout</h1>
+      <ul>
+        {cartItems.map(item => (
+          <li key={item.id}>
+            {item.name} - ${item.price} x {item.quantity}
+          </li>
+        ))}
+      </ul>
+      <button onClick={handleCheckout}>Compra completa</button>
     </div>
-);
+  );
 };
 
 export default Checkout;

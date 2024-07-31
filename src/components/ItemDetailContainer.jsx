@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getProductById } from '../utils/async-mocks';
+import React from 'react';
 import ItemDetail from './ItemDetail';
 
-const ItemDetailContainer = ({ onAddToCart }) => {
-  const { itemId } = useParams();
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    getProductById(itemId).then(setProduct);
-  }, [itemId]);
-
+const ItemDetailContainer = ({ productId }) => {
   return (
     <div>
-      {product ? <ItemDetail product={product} onAddToCart={onAddToCart} /> : <p>Cargando...</p>}
+      <ItemDetail productId={productId} />
     </div>
   );
 };

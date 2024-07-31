@@ -1,30 +1,36 @@
-import React, { useState, useContext } from 'react';
-import { CartContext } from './CartContext';
+import React, { useEffect, useState } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../firebase-config';
+import ItemQuantitySelector from './ItemQuantitySelector';
+import AddItemButton from './AddItemButton';
 
-const ItemDetail = ({ product }) => {
-  const [quantity, setQuantity] = useState(1);
-  const { addToCart } = useContext(CartContext);
+const ItemDetail = ({ productId }) => {
+  const [product, setProduct] = useState(null);
 
-  const handleAddToCart = () => {
-    addToCart(product, quantity);
-    setQuantity(1); 
-  };
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const productDoc = doc(db, 'products', productId);
+      const productSnapshot = await getDoc(productDoc);
+      if (productSnapshot.exists()) {
+        setProduct(productSnapshot.data());
+      }
+    };
+
+    fetchProduct();
+  }, [productId]);
+
+  if (!product) return <div>Loading...</div>;
 
   return (
-    <div className="item-detail">
+    <div>
       <h1>{product.name}</h1>
       <p>{product.description}</p>
-      <input 
-        type="number" 
-        value={quantity} 
-        onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
-        min="1"
-      />
-      <button onClick={handleAddToCart}>Añadir al carrito</button>
+      <p>${product.price}</p>
+      <ItemQuantitySelector product={product} />
+      <AddItemButton product={product} />
     </div>
   );
 };
 
 export default ItemDetail;
-
 

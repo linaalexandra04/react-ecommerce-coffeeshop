@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
 
-const ItemQuantitySelector = ({ onQuantityChange }) => {
+const ItemQuantitySelector = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
 
-  const handleIncrease = () => {
-    const newQuantity = quantity + 1;
-    setQuantity(newQuantity);
-    onQuantityChange(newQuantity);
-  };
-
-  const handleDecrease = () => {
-    const newQuantity = quantity > 1 ? quantity - 1 : 1;
-    setQuantity(newQuantity);
-    onQuantityChange(newQuantity);
+  const handleQuantityChange = (e) => {
+    setQuantity(Number(e.target.value));
   };
 
   return (
-    <div className="quantity-selector">
-      <button onClick={handleDecrease}>-</button>
-      <span>{quantity}</span>
-      <button onClick={handleIncrease}>+</button>
+    <div>
+      <label>
+        Quantity:
+        <input type="number" value={quantity} min="1" onChange={handleQuantityChange} />
+      </label>
     </div>
   );
 };

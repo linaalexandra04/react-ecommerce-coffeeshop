@@ -1,37 +1,17 @@
-import React, { useContext, useState } from 'react';
-import { CartContext } from '../components/CartContext';
-import '../styles/cartwidget.css';
+import React from 'react';
+import { useCart } from '../CartContext';
 
-const Cart = () => {
-  const { cartItems, clearCart } = useContext(CartContext);
-  const [purchaseComplete, setPurchaseComplete] = useState(false);
+const CartWidget = () => {
+  const { getCartItems } = useCart();
+  const cartItems = getCartItems();
 
-  const handleCheckout = () => {
-    setPurchaseComplete(true);
-    clearCart();
-    setTimeout(() => {
-      setPurchaseComplete(false);
-    }, 3000);
-  };
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="cart-page">
-      <h1>Carrito de Compras</h1>
-      {cartItems.length > 0 ? (
-        <>
-          <ul>
-            {cartItems.map((item, index) => (
-              <li key={index}>{item.name} - Cantidad: {item.quantity}</li>
-            ))}
-          </ul>
-          <button onClick={handleCheckout}>Comprar</button>
-          {purchaseComplete && <p>¡Gracias por su compra!</p>}
-        </>
-      ) : (
-        <p>No hay productos en el carrito</p>
-      )}
+    <div>
+      <span>Cart ({totalItems})</span>
     </div>
   );
 };
 
-export default Cart;
+export default CartWidget;
